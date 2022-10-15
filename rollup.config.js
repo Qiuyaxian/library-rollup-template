@@ -1,4 +1,6 @@
 import path from 'path'
+import cssnano from 'cssnano'
+import less from 'rollup-plugin-less'
 import babel from '@rollup/plugin-babel'
 import vuePlugin from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
@@ -47,12 +49,14 @@ const rollupConfig = {
     }),
     vuePlugin(),
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       extensions: extensions,
       exclude: '**/node_modules/**'
     }),
     commonjs(),
-    terser()
+    terser(),
+    less(),
+    cssnano()
   ]
 }
 

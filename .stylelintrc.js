@@ -8,6 +8,7 @@ module.exports = {
     }
   ],
   rules: {
+    'no-empty-source': null,
     'block-no-empty': true,
     'comment-empty-line-before': [
       'always',
