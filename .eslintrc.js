@@ -2,11 +2,13 @@ module.exports = {
   root: true,
   extends: ['plugin:vue/essential'],
   parserOptions: {
-    // parser: 'babel-eslint',
+    parser: 'babel-eslint',
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
+      modules: true
     },
-    ecmaVersion: 'latest',
+    allowImportExportEverywhere: true,
+    ecmaVersion: 6,
     sourceType: 'module'
   },
   rules: {

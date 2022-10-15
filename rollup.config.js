@@ -1,9 +1,10 @@
 import path from 'path'
 import babel from '@rollup/plugin-babel'
 import vuePlugin from 'rollup-plugin-vue'
+import { terser } from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
-import rollupPluginResolve from 'rollup-plugin-node-resolve'
 import visualizer from 'rollup-plugin-visualizer'
+import rollupPluginResolve from 'rollup-plugin-node-resolve'
 
 const resolve = function (filePath) {
   return path.join(__dirname, './', filePath)
@@ -50,7 +51,8 @@ const rollupConfig = {
       extensions: extensions,
       exclude: '**/node_modules/**'
     }),
-    commonjs()
+    commonjs(),
+    terser()
   ]
 }
 
