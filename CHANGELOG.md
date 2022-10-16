@@ -1,5 +1,17 @@
 
 
+## [1.0.4](https://github.com/Qiuyaxian/library-rollup-template/compare/1.0.3...1.0.4) (2022-10-16)
+
+
+### 修复bug
+
+* **config:** 修复release-it生成change-log问题 ([50927c5](https://github.com/Qiuyaxian/library-rollup-template/commit/50927c5835e0b83e1a671e93180884a046c189d6))
+
+
+### 代码重构不影响功能(既不修复bug也不添加特性)
+
+* **config:** 提交eslintcahce ([a91d327](https://github.com/Qiuyaxian/library-rollup-template/commit/a91d327dafa73fd5f316de4629089f2fe3b1284d))
+
 ## [1.0.3](https://github.com/Qiuyaxian/library-rollup-template/compare/1.0.2...1.0.3) (2022-10-16)
 
 
