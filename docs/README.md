@@ -1,33 +1,24 @@
-## README.md
+# 指南
 
-rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-css-only rollup-plugin-node-resolve rollup-plugin-postcss rollup-plugin-typescript2 rollup-plugin-uglify-es
+## 安装
 
-npm i rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-node-resolve rollup-plugin-uglify-es --save-dev
+```bash
+yarn add library-rollup-template --registry=xxx
 
-## 安装 vue 依赖
+# OR
 
-vue vue-template-compiler rollup-plugin-vue
+npm install --save-dev library-rollup-template --registry=xxx
+```
 
-## 安装 babel 依赖
+## 快速上手
 
-@babel/core @babel/preset-env
+> 本节将介绍如何在项目中使用 library-template
 
-npm i @babel/core @babel/preset-env --save-dev
+### 引入
 
-## 安装 jsx 依赖
+```js
+import Vue from 'vue'
+import LibraryRollupTemplate from 'library-rollup-template'
 
-@vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
-
-@babel/plugin-transform-runtime @babel/plugin-proposal-object-rest-spread
-
-## 安装 typescript 依赖
-
-ts-loader typescript vue-class-component vue-property-decorator @babel/preset-typescript
-
-## 安装 eslint 依赖
-
-eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-
-添加配置文件 .prettierrc
-
-.prettierrc 文件描述代码格式化的规则
+Vue.use(LibraryRollupTemplate)
+```

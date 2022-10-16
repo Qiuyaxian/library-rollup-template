@@ -1,7 +1,7 @@
-import Tabbar from './components/tabbar.vue'
+import Main from './components/main.vue'
 
-Tabbar.install = function (Vue) {
-  Vue.component(Tabbar.name, Tabbar)
+Main.install = function (Vue) {
+  Vue.component(Main.name, Main)
 }
 
-export default Tabbar
+export default Main

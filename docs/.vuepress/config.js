@@ -1,5 +1,7 @@
+const packageData = require('../../package.json')
+const version = process.env.VERSION || packageData.version
 module.exports = {
-  title: 'library-rollup-template',
+  title: `${packageData.name} v(${version})`,
   description: 'Just playing around',
   base: '/',
   themeConfig: {

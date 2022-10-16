@@ -7,41 +7,65 @@ import { terser } from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import visualizer from 'rollup-plugin-visualizer'
 import rollupPluginResolve from 'rollup-plugin-node-resolve'
+const packageName = require('./package.json').name
 
 const resolve = function (filePath) {
   return path.join(__dirname, './', filePath)
 }
 
 const extensions = ['.js', '.ts', '.tsx']
-const rollupConfig = {
-  input: resolve('src/index.js'),
-  output: [
-    {
-      name: 'demo',
-      file: resolve('dist/tabbar.umd.js'),
+
+const outputFiles = (fileName, fileType, opt) => {
+  let outputConfig = {
+    name: fileName,
+    file: resolve(`dist/${fileName}.${fileType}.js`)
+  }
+  if (opt) {
+    outputConfig = {
+      ...outputConfig,
+      ...opt
+    }
+  }
+  return outputConfig
+}
+const outputList = [
+  {
+    name: packageName,
+    type: 'umd',
+    opt: {
       format: 'umd',
       globals: {
-        vue: 'Vue' // 告诉rollup全局变量Vue即是vue
+        vue: 'Vue'
       }
-    },
-    {
-      name: 'demo',
-      file: resolve('dist/tabbar.common.js'),
+    }
+  },
+
+  {
+    name: packageName,
+    type: 'common',
+    opt: {
       format: 'cjs',
       exports: 'default',
       globals: {
-        vue: 'Vue' // 告诉rollup全局变量Vue即是vue
-      }
-    },
-    {
-      name: 'demo',
-      file: resolve('dist/tabbar.esm.js'),
-      format: 'esm',
-      globals: {
-        vue: 'Vue' // 告诉rollup全局变量Vue即是vue
+        vue: 'Vue'
       }
     }
-  ],
+  },
+  {
+    name: packageName,
+    type: 'esm',
+    opt: {
+      format: 'esm',
+      globals: {
+        vue: 'Vue'
+      }
+    }
+  }
+]
+
+const rollupConfig = {
+  input: resolve('src/index.js'),
+  output: outputList.map(({ name, type, opt }) => outputFiles(name, type, opt)),
   external: ['vue'],
   plugins: [
     rollupPluginResolve({

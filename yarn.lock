@@ -1455,6 +1455,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@laomao800/vue-demo-box@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.npmmirror.com/@laomao800/vue-demo-box/-/vue-demo-box-1.1.7.tgz#a26f374738ac9f962b52b73195e5504bf26acdda"
+  integrity sha512-WxZuQghi9XbawJuxQabkKTrpXycKcspZQ2446Ii1bzCmOnbXJp3dcoFGkvNLGQqltgpGK8FbdOauXnNjYtinzQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npmmirror.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
