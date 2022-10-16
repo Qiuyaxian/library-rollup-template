@@ -3,7 +3,7 @@
     "release": true
   },
   "git": {
-    "commitMessage": "build: build v${version}"
+    "commitMessage": "chore(tag): release v${version}"
   },
   "npm": {
     "publish": false
@@ -13,8 +13,62 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "preset": "angular",
-      "infile": "CHANGELOG.md"
+      "infile": "CHANGELOG.md",
+      "ignoreRecommendedBump": true,
+      "strictSemVer": true,
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "upd",
+            "section": "更新某功能"
+          },
+          {
+            "type": "feat",
+            "section": "创建新特性"
+          },
+          {
+            "type": "fix",
+            "section": "修复bug"
+          },
+          {
+            "type": "docs",
+            "section": "更新文档"
+          },
+          {
+            "type": "style",
+            "section": "不影响代码含义的更改(空白、格式、缺少分号等)"
+          },
+          {
+            "type": "refactor",
+            "section": "代码重构不影响功能(既不修复bug也不添加特性)"
+          },
+          {
+            "type": "perf",
+            "section": "改进性能的代码更改"
+          },
+          {
+            "type": "test",
+            "section": "添加缺失的测试或纠正现有的测试"
+          },
+          {
+            "type": "release",
+            "section": "影响构建系统或外部依赖项的更改(示例范围:gulp、broccoli、npm)"
+          },
+          {
+            "type": "ci",
+            "section": "对CI配置文件和脚本的更改(示例范围:Travis, Circle, BrowserStack, SauceLabs)"
+          },
+          {
+            "type": "chore",
+            "section": "其他不修改src或测试文件的更改"
+          },
+          {
+            "type": "revert",
+            "section": "回滚上一次提交"
+          }
+        ]
+      }
     }
   }
 }
